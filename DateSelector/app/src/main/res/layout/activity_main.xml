@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:cursorVisible="false"
+            android:editable="false" />
+
+        <ImageButton
+            android:id="@+id/dateBtn1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/imagebtn"
+            android:src="@drawable/calendar_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:cursorVisible="false"
+            android:editable="false" />
+
+        <Button
+            android:id="@+id/timeBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="选择时间" />
+    </LinearLayout>
+
+    <DigitalClock
+        android:id="@+id/DigitalClock01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@+id/digitalClock"
+        android:textSize="20dip" />
+
+    <AnalogClock
+        android:id="@+id/analogClock"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+</LinearLayout>
