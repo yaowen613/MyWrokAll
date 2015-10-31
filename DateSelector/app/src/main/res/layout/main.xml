@@ -4,31 +4,35 @@
     android:id="@+id/mainGroupLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/et22"
+        android:layout_width="50dp"
+        android:layout_height="match_parent" />
 
     <com.yaowen.classUtil.DatePicker
         android:id="@+id/myDatePicker"
-        android:layout_width="fill_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:dateFormat="yyyy-MM-dd HH:mm:ss"
         app:dialogType="selectDialog"
 
         app:value="2015-12-26 15:22:22" />
 
-    <com.yaowen.classUtil.DatePicker
-        android:id="@+id/myDatePicker2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        app:dateFormat="yyyy-MM-dd HH:mm:ss"
-        app:dialogType="canEditDialog"
-        app:value="2015-12-26 15:22:22" />
+    <!-- <com.yaowen.classUtil.DatePicker
+         android:id="@+id/myDatePicker2"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         app:dateFormat="yyyy-MM-dd HH:mm:ss"
+         app:dialogType="canEditDialog"
+         app:value="2015-12-26 15:22:22" />-->
 
     <com.yaowen.classUtil.CheckboxGroup
         android:id="@+id/checkbox"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:checkboxGroupTitle="你喜欢下面那个数字"
-        app:columnCount="4">
+        app:columnCount="2">
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -55,17 +59,32 @@
     <com.yaowen.classUtil.RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        app:checkboxGroupTitle="你的性别是？">
+        android:layout_height="wrap_content">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="1"
             android:text="女" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="2"
             android:text="男" />
+    </com.yaowen.classUtil.RadioGroup>
+
+    <com.yaowen.classUtil.RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </com.yaowen.classUtil.RadioGroup>
 </LinearLayout>
