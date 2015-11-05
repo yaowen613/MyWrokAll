@@ -113,19 +113,23 @@ public class DatePicker extends FrameLayout implements View.OnClickListener {
         return initValue;
     }
 
+    public EditText getEditText() {
+        return editText;
+    }
+
     /**
      * 设置edittext的值
      *
      * @param value String类型
      **/
-    public void setEditText(String value) {
+    public void setRawValue(String value) {
         editText.setText(value);
     }
 
     /**
      * 返回edittext的值
      **/
-    public String getEditText() {
+    public String getRawValue() {
         return editText.getText().toString();
     }
 
@@ -137,7 +141,7 @@ public class DatePicker extends FrameLayout implements View.OnClickListener {
     public void setValue(Date value) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
         String date = simpleDateFormat.format(value.getTime());
-        setEditText(date);
+        setRawValue(date);
     }
 
     /***
@@ -155,7 +159,7 @@ public class DatePicker extends FrameLayout implements View.OnClickListener {
     public void setValue(Date value, String dateFormat) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
         String date = simpleDateFormat.format(value.getTime());
-        setEditText(date);
+        setRawValue(date);
     }
 
     /***
@@ -164,7 +168,7 @@ public class DatePicker extends FrameLayout implements View.OnClickListener {
      * @return Date，转化成功时返回Date，否则返回null
      */
     public Date getValue() {
-        String text = getEditText();
+        String text = getRawValue();
         return getValue(dateFormat);
     }
 
@@ -175,7 +179,7 @@ public class DatePicker extends FrameLayout implements View.OnClickListener {
      * @return Date，转化成功时返回Date，否则返回null
      */
     public Date getValue(String dateFormat) {
-        String text = getEditText();
+        String text = getRawValue();
         SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);//小写的mm表示的是分钟
         Date date = null;
         try {
@@ -284,7 +288,7 @@ public class DatePicker extends FrameLayout implements View.OnClickListener {
 
     private void doAfterTextChanged(Editable s) {
         if (mOnTextChangeListener != null) {
-            mOnTextChangeListener.OnTextChanged(this, getEditText());
+            mOnTextChangeListener.OnTextChanged(this, getRawValue());
         }
         if (mOnDateChangeListener != null) {
             mOnDateChangeListener.OnDateChanged(this, getValue(dateFormat));
